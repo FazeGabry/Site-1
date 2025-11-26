@@ -1,0 +1,89 @@
+<!-- Pacchetto pronto per GitHub Pages -->
+<!-- index.html nella root del repository -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Mio Sito Avanzato</title>
+  <meta name="description" content="Sito moderno con dark mode, animazioni, galleria e contatti." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary:#0066ff; --secondary:#00ccff; --bg:#ffffff; --text:#222222; --card-bg:#ffffff; --shadow:rgba(0,0,0,0.1); }
+    [data-theme="dark"] { --primary:#4da3ff; --secondary:#66d9ff; --bg:#121212; --text:#e6e6e6; --card-bg:#1e1e1e; --shadow:rgba(255,255,255,0.1); }
+    body { margin:0; font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text); transition: background 0.3s,color 0.3s; }
+    header { background: linear-gradient(135deg,var(--primary),var(--secondary)); color:white; padding:80px 20px; text-align:center; animation:fadeIn 1s ease; }
+    h1{font-size:3rem;margin:0;}
+    nav{display:flex;justify-content:space-between;padding:15px 20px;background:var(--bg);box-shadow:0 2px 5px var(--shadow);position:sticky;top:0;z-index:10;}
+    nav a{margin:0 10px;text-decoration:none;color:var(--primary);font-weight:600;}
+    #menu-btn{display:none;font-size:28px;cursor:pointer;}
+    #menu-links{display:flex;gap:15px;}
+    @media(max-width:700px){#menu-btn{display:block;}#menu-links{display:none;flex-direction:column;background:var(--bg);width:100%;padding:10px 0;}#menu-links.show{display:flex;}}
+    section{padding:60px 20px;max-width:1000px;margin:auto;animation:slideUp 0.8s ease;}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .card{background:var(--card-bg);padding:20px;border-radius:10px;box-shadow:0 4px 10px var(--shadow);transition:transform 0.3s;}
+    .card:hover{transform:scale(1.05);}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+    .gallery img{width:100%;border-radius:10px;transition:transform 0.3s;}
+    .gallery img:hover{transform:scale(1.1);}
+    form{display:flex;flex-direction:column;gap:10px;}
+    input,textarea{padding:12px;border-radius:5px;border:1px solid #ccc;font-size:1rem;}
+    button{padding:12px;background:var(--primary);color:white;border:none;border-radius:5px;cursor:pointer;font-size:1rem;}
+    footer{background:#222;color:white;text-align:center;padding:20px;}
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+    @keyframes slideUp{from{transform:translateY(20px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+  </style>
+</head>
+<body>
+<nav>
+  <span id="menu-btn">☰</span>
+  <div id="menu-links">
+    <a href="#chi">Chi Sono</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#galleria">Galleria</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+  <button onclick="toggleTheme()">🌓</button>
+</nav>
+<header>
+  <h1>Sito Moderno & Avanzato</h1>
+  <p>Dark mode, animazioni, galleria e molto altro</p>
+</header>
+<section id="chi">
+  <h2>Chi Sono</h2>
+  <p>Creo siti moderni, responsive e veloci usando solo HTML, CSS e JavaScript.</p>
+</section>
+<section id="servizi">
+  <h2>Servizi</h2>
+  <div class="card-grid">
+    <div class="card"><h3>Web Design</h3><p>Realizzo siti eleganti.</p></div>
+    <div class="card"><h3>Branding</h3><p>Creo identità professionali.</p></div>
+    <div class="card"><h3>Consulenza</h3><p>Supporto totale per la tua presenza online.</p></div>
+  </div>
+</section>
+<section id="galleria">
+  <h2>Galleria</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300" alt="img1">
+    <img src="https://via.placeholder.com/300" alt="img2">
+    <img src="https://via.placeholder.com/300" alt="img3">
+  </div>
+</section>
+<section id="contatti">
+  <h2>Contattami</h2>
+  <form action="https://formsubmit.co/tuamail@example.com" method="POST">
+    <input type="text" name="name" placeholder="Nome" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
+    <button type="submit">Invia</button>
+  </form>
+</section>
+<footer>
+  © 2025 - Sito Avanzato
+</footer>
+<script>
+  function toggleTheme(){document.body.dataset.theme=document.body.dataset.theme==='dark'?'light':'dark';}
+  document.getElementById('menu-btn').onclick=()=>{document.getElementById('menu-links').classList.toggle('show');};
+</script>
+</body>
+</html>
